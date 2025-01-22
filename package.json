@@ -9,6 +9,10 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.8.7"
+    "@types/node": "^22.8.7",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "eslint-plugin-playwright": "^2.1.0"
   }
 }

@@ -1,3 +1,10 @@
+Install packages
+npm install
+
+Run test
+npx playwright test {filename}
+
+
 CONSOLE DEBUGGING
 The DEBUG=pw:api command is for enabling Playwright debugging.
 
