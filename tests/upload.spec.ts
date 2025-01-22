@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 import CartPage from '../pages/cart.page';
-const path = require('path');
+import path from 'path';
 
 test.describe('Upload file', () => {
     let cartPage: CartPage
