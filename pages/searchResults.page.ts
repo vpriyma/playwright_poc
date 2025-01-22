@@ -1,8 +1,9 @@
 import { Page, Locator } from '@playwright/test'
 
 class SearchResultsPage {
-    page: Page;
+    private page: Page;
     mainResultLinks: Locator;
+    
     constructor(page: Page) {
         this.page = page;
         this.mainResultLinks = page.locator('//div[@id="search"]//h3[text()]');

@@ -1,8 +1,8 @@
 import { Page, Locator } from '@playwright/test'
 
 class HomePage {
-    page: Page;
-    searchField: Locator;
+    private page: Page;
+    private searchField: Locator;
     
     constructor(page: Page) {
         this.page = page;
