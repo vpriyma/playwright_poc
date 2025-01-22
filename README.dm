@@ -1,9 +1,8 @@
-Install packages
+INSTALL PACKAGES
 npm install
 
-Run test
+RUN TEST
 npx playwright test {filename}
-
 
 CONSOLE DEBUGGING
 The DEBUG=pw:api command is for enabling Playwright debugging.
@@ -15,7 +14,6 @@ The DEBUG=pw:api command is for enabling Playwright debugging.
 - On Linux/Mac, the original command works fine.
 
 Run your script in the same terminal after setting this to see the debug output. No extra library is needed.
-
 
 INSPECTOR
 $env:PWDEBUG=1  
