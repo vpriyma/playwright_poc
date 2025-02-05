@@ -6,6 +6,10 @@ async function globalSetup(config: FullConfig) {
 
     // login
     await page.goto('https://practice.sdetunicorns.com/my-account/');
+    // save not signed-in state to notLoggedInState.json
+    await page.context().storageState({ path: 'notLoggedInState.json' });
+
+    // login
     await page.locator('//input[@id="username"]').fill('practiceuser1');
     await page.locator('//input[@id="password"]').fill('PracticePass1!');
     await page.locator('//button[@value="Log in"]').click();
