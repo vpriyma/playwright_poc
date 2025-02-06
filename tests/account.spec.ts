@@ -10,7 +10,7 @@ test.describe('My Account', () => {
     test('Access Downloads', async ({ page }) => {
       await page.goto('https://practice.sdetunicorns.com/my-account/');
       await page.locator('//a[contains(text(),"Downloads")]').click();
-      await expect(page).toHaveURL(/.*downloads_s/);
+      await expect(page).toHaveURL(/.*downloads/);
     });
   });
 
