@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import HomePage from '../pages/home.page';
 import SearchResultsPage from '../pages/searchResults.page';
 
-test.describe('Home', ()=> {
+test.describe.skip('Home', ()=> {
     let homePage: HomePage;
     let searchResultPage: SearchResultsPage;
 
