@@ -16,7 +16,7 @@ class HomePage {
     async searchFor(text: string) {
         await this.searchField.fill(text);
         await this.searchField.press('Enter');
-        await this.page.waitForLoadState('domcontentloaded')
+        await this.page.waitForLoadState('domcontentloaded');
     }
 }
 
