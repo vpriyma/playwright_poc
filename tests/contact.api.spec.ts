@@ -1,29 +1,19 @@
-import { test, expect, APIRequestContext, APIResponse } from '@playwright/test';
+import { test, expect, APIResponse } from '@playwright/test';
 import ContactPage from '../pages/contact.page';
+import apiController from '../controller/api.controller';
 
 test.describe('Contact', () => {
   let contactPage: ContactPage;
-  let fakerApi: APIRequestContext;
-  let randomPerson: APIResponse;
+  let users: APIResponse;
 
-  test.beforeAll(async ({ playwright }) => {
-    fakerApi = await playwright.request.newContext({
-      baseURL: 'https://jsonplaceholder.typicode.com/'
-    });
-    // GET
-    const response = await fakerApi.get('users');
-    const responseBody = await response.json();
-    randomPerson = responseBody[0]
-    // POST
-    const postResponse = await fakerApi
-      .post('/users/1/todos', {
-        data: {
-          "title": "Learn playwrught", 
-          "completed": "false"
-        }
-      });
-    const postResponseBody = await postResponse.json();
-    console.log(postResponseBody);
+  test.beforeAll(async () => {
+
+    await apiController.init();
+
+    users = await apiController.getUsers();
+
+    const newUserToDo = await apiController.createUserToDo({'title': 'Learn playwrught', 'completed': false});
+    console.log(newUserToDo);
   })
   
 
@@ -35,10 +25,10 @@ test.describe('Contact', () => {
 
     //  fill out the input fields and submit
     await contactPage.submitForm(
-      randomPerson['name'], 
-      randomPerson['email'], 
-      randomPerson['phone'], 
-      randomPerson['company']['catchPhrase']
+      users[0]['name'], 
+      users[0]['email'], 
+      users[0]['phone'], 
+      users[0]['company']['catchPhrase']
     );
     
     // verify success message
