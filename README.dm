@@ -4,6 +4,9 @@ npm install
 RUN TEST
 npx playwright test {filename}
 
+To generate allure report use 
+npx allure serve allure-results  
+
 CONSOLE DEBUGGING
 The DEBUG=pw:api command is for enabling Playwright debugging.
 
